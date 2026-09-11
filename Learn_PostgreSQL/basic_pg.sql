@@ -18,3 +18,15 @@ SELECT id FROM person;
 -- see those specifics columns
 SELECT id , city FROM person;
 
+SELECT * FROM person;
+
+-- update --
+UPDATE  person
+SET  city= 'Kalkata'
+WHERE  person.name = 'Raju' ;
+
+SELECT * FROM person;
+
+-- delete --
+DELETE FROM person
+WHERE id = 101

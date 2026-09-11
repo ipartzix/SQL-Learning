@@ -29,4 +29,6 @@ SELECT * FROM person;
 
 -- delete --
 DELETE FROM person
-WHERE id = 101
+WHERE id = 101;
+
+SELECT * FROM person;

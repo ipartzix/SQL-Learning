@@ -72,3 +72,8 @@ SELECT * FROM employees WHERE dept NOT IN('IT','HR','Finance');
 
 SELECT * FROM employees WHERE  salary BETWEEN  40000 and 60000;
 
+-- DISTINCT
+-- use it for find unique values
+
+SELECT DISTINCT dept from employees;
+

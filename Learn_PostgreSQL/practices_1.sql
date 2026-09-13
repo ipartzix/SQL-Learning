@@ -83,3 +83,8 @@ SELECT * FROM employees ORDER BY fname;
 -- by default order by make it accenting
 SELECT * FROM  employees ORDER BY fname DESC ;
 -- now it become descending
+
+
+-- LIMIT
+
+SELECT * FROM employees LIMIT 3;

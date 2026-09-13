@@ -43,3 +43,22 @@ INSERT INTO employees (emp_id, fname, lname, email, dept, salary, hire_date)
 
 
 SELECT * FROM employees ;
+
+
+-- clauses
+-- Where
+-- Distinct
+-- Order By
+-- limit
+-- Like
+
+SELECT * FROM employees where emp_id = 5;
+
+SELECT * FROM employees where dept ='HR';
+
+SELECT * FROM employees WHERE salary >= 50000 ;
+
+SELECT * FROM employees where dept ='HR'or dept='IT';
+
+SELECT * FROM employees where dept ='IT' and salary > 50000;
+

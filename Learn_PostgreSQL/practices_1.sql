@@ -77,3 +77,9 @@ SELECT * FROM employees WHERE  salary BETWEEN  40000 and 60000;
 
 SELECT DISTINCT dept from employees;
 
+-- Order by
+
+SELECT * FROM employees ORDER BY fname;
+-- by default order by make it accenting
+SELECT * FROM  employees ORDER BY fname DESC ;
+-- now it become descending

@@ -52,6 +52,9 @@ SELECT * FROM employees ;
 -- limit
 -- Like
 
+
+-- WHERE
+
 SELECT * FROM employees where emp_id = 5;
 
 SELECT * FROM employees where dept ='HR';
@@ -61,4 +64,11 @@ SELECT * FROM employees WHERE salary >= 50000 ;
 SELECT * FROM employees where dept ='HR'or dept='IT';
 
 SELECT * FROM employees where dept ='IT' and salary > 50000;
+
+--  convenient way to represent
+SELECT * FROM employees WHERE dept IN('IT','HR','Finance');
+
+SELECT * FROM employees WHERE dept NOT IN('IT','HR','Finance');
+
+SELECT * FROM employees WHERE  salary BETWEEN  40000 and 60000;
 

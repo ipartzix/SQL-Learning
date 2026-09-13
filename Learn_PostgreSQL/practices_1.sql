@@ -88,3 +88,22 @@ SELECT * FROM  employees ORDER BY fname DESC ;
 -- LIMIT
 
 SELECT * FROM employees LIMIT 3;
+-- it just shows top 3
+
+
+
+-- LIKE
+
+SELECT * FROM employees WHERE fname LIKE 'A%';
+-- name start with A
+
+SELECT * FROM employees WHERE fname LIKE '%a';
+-- name end with
+-- it case-sensitive
+
+SELECT * FROM employees WHERE fname LIKE '%i%';
+
+
+SELECT * FROM employees WHERE dept LIKE '__';
+
+SELECT * FROM employees WHERE fname LIKE '_a%';

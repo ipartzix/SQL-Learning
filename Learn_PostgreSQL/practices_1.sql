@@ -141,3 +141,9 @@ SELECT  min(employees.salary) FROM employees;
 -- MAX
 -- maximum from the table
 SELECT  max(employees.salary) FROM employees;
+
+-- GROUP BY
+
+SELECT dept FROM employees GROUP BY dept;
+
+SELECT dept,count(employees.emp_id),sum(salary) FROM employees GROUP BY dept;

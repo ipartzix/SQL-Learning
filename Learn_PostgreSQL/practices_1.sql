@@ -107,3 +107,37 @@ SELECT * FROM employees WHERE fname LIKE '%i%';
 SELECT * FROM employees WHERE dept LIKE '__';
 
 SELECT * FROM employees WHERE fname LIKE '_a%';
+
+
+
+-- aggregate function
+
+-- COUNT
+-- SUM
+-- AVG
+-- MIN
+-- MAX
+
+
+-- COUNT
+-- COUNT use for counting
+SELECT count(emp_id) FROM employees;
+
+SELECT count(fname) FROM employees;
+
+-- SUM
+-- sum of a column
+
+SELECT  sum(employees.salary) FROM employees;
+
+-- AVG
+-- average of a column
+SELECT  avg(employees.salary) FROM employees;
+
+-- MIN
+-- minimum from the table
+SELECT  min(employees.salary) FROM employees;
+
+-- MAX
+-- maximum from the table
+SELECT  max(employees.salary) FROM employees;

@@ -147,3 +147,58 @@ SELECT  max(employees.salary) FROM employees;
 SELECT dept FROM employees GROUP BY dept;
 
 SELECT dept,count(employees.emp_id),sum(salary) FROM employees GROUP BY dept;
+
+
+-- STRING FUNCTION
+-- CONCAT
+-- , work as separator for diff columns
+SELECT concat(employees.fname,employees.lname) from employees;
+
+SELECT concat(employees.fname,employees.lname) AS Fullname from employees;
+
+SELECT employees.emp_id , concat(employees.fname,employees.lname) AS Fullname , employees.salary,employees.email from employees;
+
+-- CONCATE_WS
+
+SELECT concat_ws(' ' ,employees.fname,employees.lname) AS Fullname from employees;
+SELECT concat_ws(',' ,employees.fname,employees.lname) AS Fullname from employees;
+
+-- SUBSTRING
+SELECT substr('Hello Friend',1 ,4);
+
+-- REPLACE
+
+SELECT replace('Hello Friend ','Hello','Hey');
+
+SELECT replace (employees.dept,'IT','TECH')from employees;
+
+-- REVERSE
+
+SELECT reverse(employees.email) from employees ;
+
+-- LENGTH
+
+SELECT length(employees.email), employees.email from employees;
+
+SELECT * from employees where length(employees.fname)>5 ;
+
+-- UPPER & LOWER
+SELECT upper(employees.fname) from employees ;
+SELECT lower(employees.fname) from employees ;
+
+-- LEFT & RIGHT
+SELECT left(employees.dept,4) from employees ;
+
+SELECT right(employees.fname, 3) from employees ;
+
+--TRIM
+
+SELECT length('           world          ');
+
+SELECT trim('           world          ');
+SELECT length(trim('           world          '));
+
+-- POSITION
+
+SELECT position('om'in 'thomous');
+

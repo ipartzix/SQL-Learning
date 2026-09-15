@@ -217,3 +217,11 @@ SELECT concat_ws(':',employees.emp_id,employees.fname,upper(employees.dept) ) fr
 -- H2 Priya
 
 SELECT concat(left(employees.dept, 1),employees.emp_id) from employees;
+
+select * from employees;
+
+-- find highest salary paying
+SELECT * FROM employees where salary=(select max(employees.salary) from employees);
+
+-- find lowest salary paying
+SELECT * FROM employees where salary=(select min(employees.salary) from employees);

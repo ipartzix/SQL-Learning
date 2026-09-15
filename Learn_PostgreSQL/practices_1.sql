@@ -202,3 +202,18 @@ SELECT length(trim('           world          '));
 
 SELECT position('om'in 'thomous');
 
+-- practices
+
+-- 1:Raj:Sharma:IT
+SELECT concat_ws(':',employees.emp_id,employees.fname,employees.lname,employees.dept)from employees WHERE emp_id=1;
+
+-- 1:Raj Sharma:IT:50000.00
+SELECT concat_ws(':',employees.emp_id,concat_ws(' ',employees.fname,employees.lname),employees.dept,employees.salary)from employees WHERE emp_id=1;
+
+-- 4:Suman:FINANCE
+SELECT concat_ws(':',employees.emp_id,employees.fname,upper(employees.dept) ) from employees where  emp_id=4;
+
+-- I1 Raju
+-- H2 Priya
+
+SELECT concat(left(employees.dept, 1),employees.emp_id) from employees;

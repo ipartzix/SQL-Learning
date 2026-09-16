@@ -16,3 +16,16 @@ alter table employees add constraint  email_at_list_5_words check ( length(email
 insert  into employees values(13, 'ritu', 'Sharma', 'riyu.work@gmail.com', 'IT', 54100.00, '2020-01-15',31,1245678391);
 
 insert into  employees (emp_id, fname, lname, email) values (14,'Kushal','Das','kusal@gmail.com');
+
+
+-- case expression
+
+select employees.fname ,employees.salary ,case when employees.salary>= 50000 then 'high'
+else 'low'end as sal_catagory from employees;
+
+-- salary low , mid , high cases
+
+select employees.fname ,employees.salary ,case
+    when employees.salary > 50000 then 'high'
+    when employees.salary between 45000 and 50000 then 'mid'
+    else 'low'end as sal_catagory from employees;

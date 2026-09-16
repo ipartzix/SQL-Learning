@@ -19,3 +19,16 @@ ALTER TABLE employees RENAME TO emp_data ;
 select * from emp_data;
 
 ALTER TABLE emp_data  RENAME TO  employees ;
+
+
+    -- modify columns
+
+alter table employees
+alter column fname
+set data type varchar(200);
+
+ -- set a column as default unknown
+alter table employees
+alter column fname
+set  default 'unknown';
+

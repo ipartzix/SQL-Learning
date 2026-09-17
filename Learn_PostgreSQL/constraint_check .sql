@@ -30,7 +30,6 @@ select employees.fname ,employees.salary ,case
     when employees.salary between 45000 and 50000 then 'mid'
     else 'low'end as sal_catagory from employees;
 
-
 SELECT
     fname,
     salary,

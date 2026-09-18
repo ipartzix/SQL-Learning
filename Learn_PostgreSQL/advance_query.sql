@@ -80,3 +80,32 @@ select *from dept_max_sal_emp1('HR');
 
 
 select employees.fname, employees.salary, sum(employees.salary) over (order by salary) from employees;-- it called running sum called
+
+
+
+-- ROW_NUMBER()
+
+select
+    row_number() over (order by fname),
+    employees.fname ,
+    employees.dept,
+    employees.salary
+from employees;
+
+select
+            row_number() over (partition by dept),
+            employees.fname ,
+            employees.dept,
+            employees.salary
+from employees;
+
+
+-- RANK()
+
+select employees.fname , employees.salary,
+       rank()  over (order by employees.salary DESC )
+from employees;
+
+select employees.fname , employees.salary,
+       dense_rank()  over (order by employees.salary DESC )
+from employees;

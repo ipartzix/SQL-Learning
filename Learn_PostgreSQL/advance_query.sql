@@ -118,5 +118,5 @@ select employees.fname , employees.salary,
 
 -- LEAD() - one step advance
 select employees.fname , employees.salary,
-       lead(salary) over ()
+     (employees.salary-  lead(salary) over (order by salary DESC )) as salary_diff
 from employees;

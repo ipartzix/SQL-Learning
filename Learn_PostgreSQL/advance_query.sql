@@ -47,3 +47,26 @@ $$;
 call add_employee('Partha','Paul','parthapaul2705@gmail.com','MLE',90000);
 
 
+-- USER DEFINED FUNCTIONS
+-- custom function created by the user to perform specific operations and return a value
+
+CREATE OR REPLACE FUNCTION dept_max_sal_emp1(dept_name VARCHAR)
+    RETURNS TABLE(emp_id INT, fname VARCHAR, salary NUMERIC)
+AS $$
+BEGIN
+    RETURN QUERY
+        SELECT
+            e.emp_id, e.fname, e.salary
+        FROM
+            employees e
+        WHERE
+            e.dept = dept_name
+          AND e.salary = (
+            SELECT MAX(emp.salary)
+            FROM employees emp
+            WHERE emp.dept = dept_name
+        );
+END;
+$$ LANGUAGE plpgsql;
+
+select *from dept_max_sal_emp1('HR');

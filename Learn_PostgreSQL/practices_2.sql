@@ -63,7 +63,7 @@ VALUES
     ('Cable', 250.00)
 ;
 
-
+create view  billing_info as
 select
     c.cust_name,
     p.p_name,
@@ -79,3 +79,6 @@ from order_items as oi
     join
     customers c on o.cust_id = c.cust_id
 ;
+-- create view of existing query
+
+select * from  billing_info ;

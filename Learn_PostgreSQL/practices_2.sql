@@ -82,3 +82,35 @@ from order_items as oi
 -- create view of existing query
 
 select * from  billing_info ;
+
+--  HAVING Clause
+
+-- The SQL HAVING clause is used to filter the results of a query after rows have been grouped
+-- and aggregated by a GROUP BY clause. It was specifically introduced because the WHERE clause
+-- cannot be used to filter conditions based on aggregate functions (like SUM(), COUNT(), AVG(), MAX(), or MIN()).
+
+select p_name,
+       sum(total_price)
+from  billing_info
+group by p_name
+having sum(total_price)> 1500 ;
+
+-- when we use group by we can not uss where we use having
+
+
+select p_name,
+       sum(total_price)
+from  billing_info
+group by rollup (p_name)--  ROLLUP extension tells the database to calculate standard groups plus a grand total for the entire table.
+order by sum(total_price);
+
+
+SELECT
+    COALESCE(p_name, 'Grand Total') AS product_name,
+    SUM(total_price) AS total_revenue
+FROM
+    billing_info
+GROUP BY
+    ROLLUP (p_name)
+ORDER BY
+    SUM(total_price);

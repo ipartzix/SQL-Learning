@@ -120,3 +120,10 @@ select employees.fname , employees.salary,
 select employees.fname , employees.salary,
      (employees.salary-  lead(salary) over (order by salary DESC )) as salary_diff
 from employees;
+
+
+-- CTE (Common Table Expression)
+
+-- CTE (Common Table Expression) is a temporary result set that you can define
+-- within a query to simplify complex SQL statements.
+

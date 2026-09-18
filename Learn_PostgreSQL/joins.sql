@@ -37,3 +37,13 @@ SELECT c.cust_name, sum(o.price) AS total_orders
 FROM customers as c
 INNER JOIN orders as o ON c.cust_id = o.cust_id
 GROUP BY c.cust_name;
+
+
+-- LEFT JOIN
+-- Returns all rows from the left (or first) table
+-- and the matching rows from the right (or
+-- second) table.
+
+SELECT * from customers
+left join orders
+on customers.cust_id = orders.cust_id;

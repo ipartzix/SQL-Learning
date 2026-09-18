@@ -47,3 +47,8 @@ GROUP BY c.cust_name;
 SELECT * from customers
 left join orders
 on customers.cust_id = orders.cust_id;
+
+
+SELECT * from orders
+right join customers
+on customers.cust_id = orders.cust_id;

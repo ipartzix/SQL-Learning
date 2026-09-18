@@ -70,3 +70,13 @@ END;
 $$ LANGUAGE plpgsql;
 
 select *from dept_max_sal_emp1('HR');
+
+-- Windows function
+
+-- Window functions, also known as analytic
+-- functions allow you to perform calculations
+-- across a set of rows related to the current row.
+-- Defined by an OVER() clause.
+
+
+select employees.fname, employees.salary, sum(employees.salary) over (order by salary) from employees;-- it called running sum called

@@ -127,3 +127,33 @@ from employees;
 -- CTE (Common Table Expression) is a temporary result set that you can define
 -- within a query to simplify complex SQL statements.
 
+
+
+
+-- TRIGGERS
+-- Triggers are special procedures in a database that automatically execute predefined
+-- actions in response to certain events on a specified table or view.
+
+
+select * from employees;
+
+call update_emp_salary(1,-60000);
+
+-- 1. Corrected Trigger Function
+CREATE OR REPLACE FUNCTION check_salary()
+    RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.salary < 0 THEN
+        NEW.salary := 0; -- Used := instead of =
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 2. Bind Function to the Table
+CREATE OR REPLACE TRIGGER trg_check_salary
+    BEFORE INSERT OR UPDATE ON employees
+    FOR EACH ROW
+EXECUTE FUNCTION check_salary();
+
+call update_emp_salary(1,-60000);

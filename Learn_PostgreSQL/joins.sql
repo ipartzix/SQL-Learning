@@ -23,7 +23,8 @@ customers
 inner join
 orders
 on customers.cust_id = orders.cust_id ;
--- we can also create alias for this like customers as client.cust_id == customers.cust_id
+-- we can also create alias for this like customers as  client
+-- client.cust_id == customers.cust_id
 
 
 SELECT c.cust_name, COUNT(o.ord_id) AS total_orders

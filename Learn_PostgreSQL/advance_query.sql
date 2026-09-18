@@ -100,7 +100,7 @@ select
 from employees;
 
 
--- RANK()
+-- RANK() & DENSE_RANK()
 
 select employees.fname , employees.salary,
        rank()  over (order by employees.salary DESC )
@@ -108,4 +108,15 @@ from employees;
 
 select employees.fname , employees.salary,
        dense_rank()  over (order by employees.salary DESC )
+from employees;
+
+-- LAG() - one step back
+select employees.fname , employees.salary,
+       lag(salary) over ()
+       from employees;
+
+
+-- LEAD() - one step advance
+select employees.fname , employees.salary,
+       lead(salary) over ()
 from employees;
